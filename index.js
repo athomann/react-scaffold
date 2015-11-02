@@ -7,7 +7,7 @@ var read = fs.readFileSync;
 var mkdirp = require('mkdirp');
 
 var template = read(__dirname + '/componentTemplate.js', 'utf8');
-var styleTemplate = read(__dirname + '/componentCssTemplate.js', 'utf8');
+var styleTemplate = read(__dirname + '/componentCssTemplate.css', 'utf8');
 var filename;
 var componentName;
 var styleExists = false;
