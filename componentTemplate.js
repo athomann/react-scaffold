@@ -1,19 +1,18 @@
-'use strict';
+import React, { PropTypes, Component } from 'react';
+import styles from './{{displayName}}.css';
 
-var React = require('react');
-require('./styles/{{displayName}}.scss');
+class {{displayName}} extends Component {
 
-/**
- * @module {{displayName}}
- */
-class {{displayName}} extends React.Component {
+    static propTypes = {
+
+    }
+
+    state = {
+        exampleState : 'initial state'
+    };
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            exampleState : 'initial state'
-        };
     }
 
     componentWillMount() {
@@ -38,14 +37,4 @@ class {{displayName}} extends React.Component {
     }
 }
 
-{{displayName}}.defaultProps = {
-    defaultPropGoesHere: 'default prop'
-};
-
-{{displayName}}.propTypes = {
-    example: React.PropTypes.string
-};
-
-{{displayName}}.displayName = '{{displayName}}';
-
-module.exports = {{displayName}};
+export default {{displayName}};

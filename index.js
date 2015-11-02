@@ -7,7 +7,7 @@ var read = fs.readFileSync;
 var mkdirp = require('mkdirp');
 
 var template = read(__dirname + '/componentTemplate.js', 'utf8');
-var filename; 
+var filename;
 var componentName;
 var styleExists = false;
 
@@ -55,9 +55,9 @@ var init = function(){
         mkdirp.sync(componentName + '/styles');
 
         console.log('writing style directory');
-        fs.writeFile(componentName + '/styles/' + componentName + '.scss', '', function (err) {
+        fs.writeFile(componentName + '/' + componentName + '.css', '', function (err) {
             if (err) return console.log(err);
-            console.log(componentName + ' > style/' + componentName + '.scss');
+            console.log(componentName + ' > /' + componentName + '.css');
         });
 
         template = template.replace(/{{displayName}}/g,capitalize(componentName));
@@ -69,4 +69,4 @@ var init = function(){
     }
 }
 
-module.exports = init(); 
+module.exports = init();
