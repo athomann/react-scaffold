@@ -8,6 +8,7 @@ var mkdirp = require('mkdirp');
 
 var template = read(__dirname + '/componentTemplate.js', 'utf8');
 var styleTemplate = read(__dirname + '/componentCssTemplate.css', 'utf8');
+var packageTemplate = read(__dirname + '/packageTemplate.json', 'utf8');
 var filename;
 var componentName;
 var styleExists = false;
@@ -54,6 +55,7 @@ var init = function(){
         }
 
         console.log('writing style directory');
+        mkdirp.sync(componentName);
 
         styleTemplate = styleTemplate.replace(/{{displayName}}/g,capitalize(componentName));
         fs.writeFile(componentName + '/' + componentName + '.css', styleTemplate, function (err) {
@@ -62,10 +64,15 @@ var init = function(){
         });
 
         template = template.replace(/{{displayName}}/g,capitalize(componentName));
-
         fs.writeFile(componentName + '/' + componentName + '.js', template, function (err) {
             if (err) return console.log(err);
             console.log(componentName + ' > ' + componentName + '.js');
+        });
+
+        packageTemplate = packageTemplate.replace(/{{displayName}}/g,capitalize(componentName));
+        fs.writeFile(componentName + '/' + componentName + '.json', packageTemplate, function (err) {
+            if (err) return console.log(err);
+            console.log(componentName + ' > ' + componentName + '.json');
         });
     }
 }
