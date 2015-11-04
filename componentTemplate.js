@@ -3,38 +3,37 @@ import styles from './{{displayName}}.css';
 
 class {{displayName}} extends Component {
 
-    static propTypes = {
+  static propTypes = {
+  }
 
-    }
+  state = {
+    exampleState : 'initial state'
+  };
 
-    state = {
-        exampleState : 'initial state'
-    };
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
+  componentWillMount() {
+  }
 
-    componentWillMount() {
-    }
+  componentDidMount() {
+  }
 
-    componentDidMount() {
-    }
+  componentWillUpdate() {
+  }
 
-    componentWillUpdate() {
-    }
+  componentDidUpdate() {
+  }
 
-    componentDidUpdate() {
-    }
+  componentWillUnmount() {
+  }
 
-    componentWillUnmount() {
-    }
-
-    render() {
-        return (
-            <div></div>
-        );
-    }
+  render() {
+    return (
+      <div className="{{displayName}}"></div>
+    );
+  }
 }
 
 export default {{displayName}};

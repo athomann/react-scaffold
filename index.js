@@ -70,7 +70,7 @@ var init = function(){
         });
 
         packageTemplate = packageTemplate.replace(/{{displayName}}/g,capitalize(componentName));
-        fs.writeFile(componentName + '/' + componentName + '.json', packageTemplate, function (err) {
+        fs.writeFile(componentName + '/' + 'package.json', packageTemplate, function (err) {
             if (err) return console.log(err);
             console.log(componentName + ' > ' + 'package.json');
         });
