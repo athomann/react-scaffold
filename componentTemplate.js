@@ -1,13 +1,15 @@
+import cssModules from 'react-css-modules';
 import React, { PropTypes, Component } from 'react';
 import styles from './{{displayName}}.css';
 
+@cssModules(styles)
 class {{displayName}} extends Component {
 
   static propTypes = {
   }
 
-  state = {
-    exampleState : 'initial state'
+  static contextTypes ={
+    store: PropTypes.object.isRequired,
   };
 
   constructor(props) {
@@ -17,21 +19,11 @@ class {{displayName}} extends Component {
   componentWillMount() {
   }
 
-  componentDidMount() {
-  }
-
-  componentWillUpdate() {
-  }
-
-  componentDidUpdate() {
-  }
-
-  componentWillUnmount() {
-  }
-
   render() {
     return (
-      <div className="{{displayName}}"></div>
+      <div className="{{displayName}}">
+
+      </div>
     );
   }
 }
